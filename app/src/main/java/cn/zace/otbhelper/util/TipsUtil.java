@@ -1,5 +1,6 @@
 package cn.zace.otbhelper.util;
 
+import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 
@@ -14,7 +15,7 @@ public class TipsUtil {
 
 
     private static QMUITipDialog mQmuiTipDialog;
-    private static TipHandler mHandler;
+    private static TipHandler mHandler = new TipHandler();
     private static final int SHOWTIME = 1000;
 
     public static void dismiss() {
@@ -23,8 +24,8 @@ public class TipsUtil {
         }
     }
 
-    public static void showSuccess(String message) {
-        mQmuiTipDialog = new QMUITipDialog.Builder(OTBApp.getInstance())
+    public static void showSuccess(Context context,String message) {
+        mQmuiTipDialog = new QMUITipDialog.Builder(context)
                 .setIconType(QMUITipDialog.Builder.ICON_TYPE_SUCCESS)
                 .setTipWord(message)
                 .create();
@@ -34,8 +35,8 @@ public class TipsUtil {
 
     }
 
-    public static void showError(String message) {
-        mQmuiTipDialog = new QMUITipDialog.Builder(OTBApp.getInstance())
+    public static void showError(Context context,String message) {
+        mQmuiTipDialog = new QMUITipDialog.Builder(context)
                 .setIconType(QMUITipDialog.Builder.ICON_TYPE_FAIL)
                 .setTipWord(message)
                 .create();
@@ -45,8 +46,8 @@ public class TipsUtil {
 
     }
 
-    public static void showLoading(String message) {
-        mQmuiTipDialog = new QMUITipDialog.Builder(OTBApp.getInstance())
+    public static void showLoading(Context context,String message) {
+        mQmuiTipDialog = new QMUITipDialog.Builder(context)
                 .setIconType(QMUITipDialog.Builder.ICON_TYPE_LOADING)
                 .setTipWord(message)
                 .create();

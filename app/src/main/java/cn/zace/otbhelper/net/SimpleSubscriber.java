@@ -23,7 +23,7 @@ public abstract class SimpleSubscriber<T> extends Subscriber<T> {
     public void onStart() {
         super.onStart();
         if (needLoading()) {
-            TipsUtil.showLoading(onLoading());
+            TipsUtil.showLoading(mContext,onLoading());
         }
     }
 
@@ -39,7 +39,7 @@ public abstract class SimpleSubscriber<T> extends Subscriber<T> {
         throwable.printStackTrace();
         // 统一处理错误回调，显示Toast
         String errorInfo = ErrorInfoUtils.parseHttpErrorInfo(throwable);
-        TipsUtil.showError("请求异常：" + errorInfo);
+        TipsUtil.showError(mContext,"请求异常：" + errorInfo);
 //        onHandleError(errorInfo);
     }
 
@@ -49,7 +49,7 @@ public abstract class SimpleSubscriber<T> extends Subscriber<T> {
     public void onNext(T t) {
         TipsUtil.dismiss();
         if (t instanceof ErrorResponse) {
-            TipsUtil.showError("返回异常：" + ((ErrorResponse) t).getError());
+            TipsUtil.showError(mContext,"返回异常：" + ((ErrorResponse) t).getError());
         } else {
             onSuccess(t);
         }

@@ -16,33 +16,121 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_centerVertical="true"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="OTB-USDT-EOS-OTB"
-                android:textColor="#000"
-                android:textSize="14sp" />
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="OTB-USDT-EOS-OTB"
+                    android:textColor="#000"
+                    android:textSize="14sp" />
 
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:textSize="12sp"
+                    android:textColor="#666666"
+                    android:id="@+id/last_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
             <Button
-                android:layout_centerVertical="true"
+                android:text="未知"
                 android:id="@+id/otb"
                 style="@style/QDRadiusButton"
                 android:layout_alignParentRight="true"
-                android:text="OTB-USDT-EOS-OTB" />
+                android:layout_centerVertical="true" />
         </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="OTB_BTC_EOS_OTB"
+                    android:textColor="#000"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:textSize="12sp"
+                    android:textColor="#666666"
+                    android:id="@+id/last_time2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <Button
+                android:text="未知"
+                android:id="@+id/otb2"
+                style="@style/QDRadiusButton"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true" />
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="OTB_ETH_EOS_OTB"
+                    android:textColor="#000"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:textSize="12sp"
+                    android:textColor="#666666"
+                    android:id="@+id/last_time3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <Button
+                android:text="未知"
+                android:id="@+id/otb3"
+                style="@style/QDRadiusButton"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true" />
+        </RelativeLayout>
+
     </LinearLayout>
 
     <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_marginBottom="20dp"
+        android:id="@+id/btn_service"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
         android:clickable="true"
-        android:onClick="startOrStop"
         android:gravity="center"
+        android:onClick="startOrStop"
         android:padding="10dp"
-        android:text="开启服务"
+        android:text="点击开启服务"
         app:qmui_radius="100dp" />
 
 </RelativeLayout>

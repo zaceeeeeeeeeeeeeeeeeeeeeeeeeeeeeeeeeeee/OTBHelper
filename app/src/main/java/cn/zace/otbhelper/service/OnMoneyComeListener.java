@@ -5,6 +5,6 @@ package cn.zace.otbhelper.service;
  */
 public interface OnMoneyComeListener {
 
-    void change(double chg);
+    void change(String chg1, String chg2 ,String chg3,String time);
 
 }
