@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OTB-USDT-EOS-OTB"
+                android:textColor="#000"
+                android:textSize="14sp" />
+
+            <Button
+                android:layout_centerVertical="true"
+                android:id="@+id/otb"
+                style="@style/QDRadiusButton"
+                android:layout_alignParentRight="true"
+                android:text="OTB-USDT-EOS-OTB" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:clickable="true"
+        android:onClick="startOrStop"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="开启服务"
+        app:qmui_radius="100dp" />
+
+</RelativeLayout>
