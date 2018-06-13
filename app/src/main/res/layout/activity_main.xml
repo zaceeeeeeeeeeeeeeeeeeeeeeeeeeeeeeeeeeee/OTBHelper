@@ -12,7 +12,17 @@
         android:layout_marginTop="50dp"
         android:orientation="vertical">
 
+
+        <TextView
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:textSize="18sp"
+            android:id="@+id/last_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
         <RelativeLayout
+            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -32,7 +42,7 @@
                     android:layout_marginTop="5dp"
                     android:textSize="12sp"
                     android:textColor="#666666"
-                    android:id="@+id/last_time"
+                    android:id="@+id/max_sup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -68,7 +78,7 @@
                     android:layout_marginTop="5dp"
                     android:textSize="12sp"
                     android:textColor="#666666"
-                    android:id="@+id/last_time2"
+                    android:id="@+id/max_sup2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -104,7 +114,7 @@
                     android:layout_marginTop="5dp"
                     android:textSize="12sp"
                     android:textColor="#666666"
-                    android:id="@+id/last_time3"
+                    android:id="@+id/max_sup3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -117,12 +127,13 @@
                 android:layout_centerVertical="true" />
         </RelativeLayout>
 
+
     </LinearLayout>
 
     <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
         android:id="@+id/btn_service"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"

@@ -21,6 +21,7 @@ import cn.zace.otbhelper.net.ObservableDecorator;
 import cn.zace.otbhelper.net.SimpleSubscriber;
 import cn.zace.otbhelper.response.DepthResponse;
 import cn.zace.otbhelper.response.TickersResponse;
+import cn.zace.otbhelper.util.Arith;
 import cn.zace.otbhelper.util.TimeUtil;
 import rx.Observable;
 
@@ -80,45 +81,34 @@ public class OTBService extends Service {
         double buyEOS_OTB = Double.parseDouble(response.getEos_otb().getTicker().getBuy());
 
 
-
+        //OTB-USDT-EOS-OTB
         double buyOTB_USDT = Double.parseDouble(response.getOtb_usdt().getTicker().getBuy());
 
         double sellEOS_USDT = Double.parseDouble(response.getEos_usdt().getTicker().getSell());
 
-        double chg1 = buyOTB_USDT * 0.999 / sellEOS_USDT * 0.999 * buyEOS_OTB - 1;
+        String OTB_USDT_EOS_OTB_chgStr = Arith.getChg(buyEOS_OTB, buyOTB_USDT, sellEOS_USDT);
 
-        String OTB_USDT_EOS_OTB_chgStr = df.format(chg1);
-
-
-
-
+        //OTB-BTC-EOS-OTB
         double buyOTB_BTC = Double.parseDouble(response.getOtb_btc().getTicker().getBuy());
 
         double sellEOS_BTC = Double.parseDouble(response.getEos_btc().getTicker().getSell());
 
-        double chg2 = buyOTB_BTC * 0.999 / sellEOS_BTC * 0.999 * buyEOS_OTB - 1;
-
-        String OTB_BTC_EOS_OTB_chgStr = df.format(chg2);
+        String OTB_BTC_EOS_OTB_chgStr = Arith.getChg(buyEOS_OTB, buyOTB_BTC, sellEOS_BTC);
 
 
-
-
+        //OTB-ETH-EOS-OTB
         double buyOTB_ETH = Double.parseDouble(response.getOtb_eth().getTicker().getBuy());
 
         double sellEOS_ETH = Double.parseDouble(response.getEos_eth().getTicker().getSell());
 
-        double chg3 = buyOTB_ETH * 0.999 / sellEOS_ETH * 0.999 * buyEOS_OTB - 1;
+        String OTB_ETH_EOS_OTB_chgStr = Arith.getChg(buyEOS_OTB, buyOTB_ETH, sellEOS_ETH);
 
-        String OTB_ETH_EOS_OTB_chgStr = df.format(chg3);
-
-
-
-
+        //时间
         String time = TimeUtil.timestamp2Date(response.getOtb_usdt().getAt() + "");
 
-        onMoneyComeListener.change(OTB_USDT_EOS_OTB_chgStr,OTB_BTC_EOS_OTB_chgStr,OTB_ETH_EOS_OTB_chgStr, time);
+        onMoneyComeListener.change(OTB_USDT_EOS_OTB_chgStr, OTB_BTC_EOS_OTB_chgStr, OTB_ETH_EOS_OTB_chgStr, time);
 
-        mHandler.sendEmptyMessageDelayed(0, 30 * 1000);
+        mHandler.sendEmptyMessageDelayed(0, 3 * 1000);
     }
 
 
